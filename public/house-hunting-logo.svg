@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="160" viewBox="0 0 680 160" role="img" aria-labelledby="hhTitle hhDesc">
+  <title id="hhTitle">HH House Hunting</title>
+  <desc id="hhDesc">A copper house roof enclosing the HH monogram beside the words House Hunting.</desc>
+  <defs>
+    <linearGradient id="copper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f3c28b"/>
+      <stop offset="0.48" stop-color="#c47b4d"/>
+      <stop offset="1" stop-color="#77442e"/>
+    </linearGradient>
+    <linearGradient id="ink" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f6f1e9"/>
+      <stop offset="1" stop-color="#bfc0b9"/>
+    </linearGradient>
+    <filter id="lift" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="3" stdDeviation="2" flood-color="#000000" flood-opacity="0.42"/>
+    </filter>
+  </defs>
+  <g filter="url(#lift)" transform="translate(9 5)">
+    <path d="M12 66 82 10l70 56" fill="none" stroke="#603a2b" stroke-width="13" stroke-linecap="square" stroke-linejoin="miter" transform="translate(0 4)"/>
+    <path d="M12 66 82 10l70 56" fill="none" stroke="url(#copper)" stroke-width="10" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path d="M31 67v77h102V67" fill="#172124" stroke="#986143" stroke-width="3"/>
+    <path d="M35 72v69h94V72" fill="none" stroke="#d9905d" stroke-opacity="0.33" stroke-width="1.4"/>
+    <text x="83" y="129" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="800" letter-spacing="-4" fill="#513424" transform="translate(0 3)">HH</text>
+    <text x="83" y="129" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="800" letter-spacing="-4" fill="url(#ink)">HH</text>
+  </g>
+  <g font-family="Arial, Helvetica, sans-serif" font-weight="800">
+    <text x="196" y="77" font-size="41" letter-spacing="5.2" fill="#f4f0e9">HOUSE</text>
+    <text x="196" y="126" font-size="41" letter-spacing="4.2" fill="url(#copper)">HUNTING</text>
+  </g>
+</svg>

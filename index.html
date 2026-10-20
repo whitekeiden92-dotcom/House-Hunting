@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#11191c" />
+    <meta name="description" content="Explore a mountain retreat in an interactive 3D winter scene. Rotate around the cabin, zoom closer, and watch the sunset snowfall." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/house-hunting-icon-192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/house-hunting-icon-512.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <title>House Hunting — Mountain Retreat | Interactive 3D Preview</title>
+  </head>
+  <body>
+    <div id="app">
+      <main class="experience" aria-label="House Hunting mountain retreat scene">
+        <canvas id="scene" aria-label="Interactive 3D view of a mountain retreat cabin. Drag to orbit, or use the arrow keys to rotate and the plus and minus keys to zoom. Ctrl plus scroll or pinch also zooms." ></canvas>
+        <div class="scene-wash" aria-hidden="true"></div>
+
+        <header class="topbar">
+          <a class="wordmark" href="#top" aria-label="HH House Hunting">
+            <span class="wordmark-lockup">
+              <img class="wordmark-logo" src="/house-hunting-logo.svg" alt="HH House Hunting" />
+              <span class="wordmark-descriptor">ALPINE PROPERTY PREVIEW</span>
+            </span>
+          </a>
+          <nav class="top-links" aria-label="Page links">
+            <a class="top-browse" href="/app.html#/listings">BROWSE HOMES</a><a href="#about">ABOUT US</a>
+            <span class="nav-divider" aria-hidden="true"></span>
+            <a href="#scene-controls">EXPLORE</a>
+          </nav>
+          <button class="motion-link" id="watchAnimation" type="button">
+            <span class="play-glyph" aria-hidden="true">▶</span><span>WATCH THE FILM</span>
+          </button>
+        </header>
+
+        <section class="hero-copy" id="top" aria-labelledby="experience-title">
+          <div class="eyebrow"><span class="eyebrow-dot"></span> A WINTER HIDEAWAY · NORWAY</div>
+          <h1 id="experience-title">HOUSE<br /><span>HUNTING</span></h1>
+          <p class="hero-description">We shaped a stillness among the pines<br class="desktop-break" /> that renews.</p>
+          <div class="hero-meta"><span>68° 26′ N &nbsp;·&nbsp; 17° 25′ E</span><span class="meta-line"></span><span>WINTER / 2026</span></div>
+        </section>
+
+        <aside class="scene-note" aria-label="Scene detail">
+          <span class="note-kicker">THE AFTERGLOW</span>
+          <strong>Last light, held<br />a little longer.</strong>
+          <span class="note-foot"><span class="tiny-sun" aria-hidden="true"></span> SUNSET · 16:42</span>
+        </aside>
+
+        <div class="scene-status" aria-hidden="true">
+          <span class="status-ring"></span><span>REAL-TIME 3D</span><span class="status-separator">/</span><span>WINTER SCENE 01</span>
+        </div>
+
+        <div class="camera-controls" role="group" aria-label="Camera controls">
+          <span class="camera-controls-label" aria-hidden="true">CAMERA</span>
+          <div class="camera-pad">
+            <button class="camera-button" id="rotateLeft" type="button" aria-label="Rotate camera left" title="Rotate camera left"><span aria-hidden="true">↶</span></button>
+            <button class="camera-button" id="rotateRight" type="button" aria-label="Rotate camera right" title="Rotate camera right"><span aria-hidden="true">↷</span></button>
+            <button class="camera-button" id="zoomOut" type="button" aria-label="Zoom out from the cabin" title="Zoom out"><span aria-hidden="true">−</span></button>
+            <button class="camera-button" id="zoomIn" type="button" aria-label="Zoom into the cabin" title="Zoom into the cabin"><span aria-hidden="true">+</span></button>
+          </div>
+        </div>
+
+        <footer class="scene-controls" id="scene-controls" aria-label="3D preview controls">
+          <div class="control-hint"><span class="drag-icon" aria-hidden="true">↔</span><span><strong>DRAG TO ORBIT</strong><small>CTRL + SCROLL OR PINCH TO ZOOM</small></span></div>
+          <div class="control-divider" aria-hidden="true"></div>
+          <button class="control-button" id="motionToggle" type="button" aria-pressed="true" aria-label="Pause scene motion">
+            <span class="control-icon pause-icon" aria-hidden="true"><i></i><i></i></span><span class="button-label">PAUSE MOTION</span>
+          </button>
+          <button class="control-button" id="snowToggle" type="button" aria-pressed="true" aria-label="Turn falling snow off">
+            <svg class="snow-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2v16M3.1 6l13.8 8M16.9 6 3.1 14M7.5 3.4 10 5.9l2.5-2.5M7.5 16.6 10 14.1l2.5 2.5M3.8 9.4l3.4-.9-.9-3.4M16.2 10.6l-3.4.9.9 3.4M16.2 9.4l-3.4-.9.9-3.4M3.8 10.6l3.4.9-.9 3.4" /></svg>
+            <span class="button-label">SNOW ON</span>
+          </button>
+          <button class="control-button reset-button" id="resetCamera" type="button" aria-label="Reset camera view">
+            <svg class="reset-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M3.2 9.1a7 7 0 1 1 .7 4.3M3.2 4.8v4.5h4.5" /></svg><span class="button-label">RESET VIEW</span>
+          </button>
+        </footer>
+
+        <div class="edge-caption" aria-hidden="true"><span>DRAG TO DISCOVER</span><span class="edge-rule"></span><span>EST. IN STILLNESS</span></div>
+      </main>
+
+      <section class="about-section" id="about" aria-labelledby="about-title">
+        <a class="about-browse" href="/app.html#/listings">Browse homes for sale, rent and short stays →</a>
+        <div class="about-sky" aria-hidden="true"><span class="about-sky-ring"></span><span class="about-sky-glint"></span></div>
+        <div class="about-shell">
+          <header class="about-intro about-reveal">
+            <span class="about-kicker"><span class="about-kicker-dot"></span> ABOUT HOUSE HUNTING · KENYA</span>
+            <h2 class="about-title" id="about-title">Find Your Perfect Home,<br /><span>Without the Stress.</span></h2>
+            <p class="about-lead">A more thoughtful way to find a place to call home.</p>
+            <div class="about-seal" aria-hidden="true">
+              <svg class="about-seal-art" viewBox="0 0 160 160">
+                <circle class="seal-orbit" cx="80" cy="80" r="69" />
+                <circle class="seal-orbit-inner" cx="80" cy="80" r="56" />
+                <path class="seal-house" d="M45 75 80 46l35 29v37H45zM70 112V88h20v24" />
+                <text class="seal-letters" x="80" y="82" text-anchor="middle">HH</text>
+                <circle class="seal-star" cx="130" cy="46" r="3" />
+              </svg>
+              <span class="about-seal-caption">HOME · KENYA</span>
+            </div>
+          </header>
+
+          <div class="about-story">
+            <p class="about-paragraph">Welcome to House Hunting, your trusted partner in finding the perfect place to call home.</p>
+            <p class="about-paragraph">Our primary audience is people living in Kenya, especially those searching in Nairobi, Kiambu, Ruaka, Ruiru, Thika, Kasarani, Westlands, Kilimani, and Rongai.</p>
+            <p class="about-paragraph">We understand that finding a house is more than just searching for a building. It is about finding comfort, security, convenience, and a place where you can create lasting memories. That is why House Hunting is designed to make the process of finding a home simpler, faster, and more convenient.</p>
+            <p class="about-paragraph">We are building a platform to bring together property seekers, property owners, landlords, and real estate agents in one convenient place. Whether you are searching for an affordable bedsitter, a modern studio apartment, a spacious one-bedroom apartment, a family house, or a luxurious property, House Hunting is designed to help you explore options based on your needs and budget.</p>
+            <p class="about-paragraph">Our aim is to make house hunting less stressful by organizing property information so people can explore listings, view photographs, compare rental prices, and discover locations before making a decision.</p>
+            <p class="about-paragraph">Everyone has different housing needs. Students may look for affordable accommodation near their institutions, young professionals may want homes close to work, and families may seek spacious homes in peaceful neighborhoods. Our goal is to make suitable housing options easier to find.</p>
+            <p class="about-paragraph">At House Hunting, we believe finding a home should be an exciting experience rather than a frustrating one. We are committed to building a convenient, accessible, and user-friendly platform that helps people discover housing opportunities and make informed decisions.</p>
+            <p class="about-paragraph">Our vision is to become a trusted destination for house hunting in Kenya and eventually expand to other markets. House Hunting is more than a property-search website; it is built around the idea that everyone deserves the opportunity to find a place they can proudly call home.</p>
+            <div class="about-signoff about-reveal">
+              <strong>Your comfort matters. Your budget matters. Your next home matters.</strong>
+              <span>Let House Hunting help you take the next step.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <dialog class="film-dialog" id="filmDialog" aria-labelledby="filmTitle">
+        <div class="film-shell">
+          <div class="film-header"><div><span class="film-eyebrow">HOUSE HUNTING · MOTION STUDY</span><h2 id="filmTitle">A mountain retreat in motion.</h2></div><button class="close-film" id="closeFilm" type="button" aria-label="Close film">×</button></div>
+          <video id="filmVideo" controls muted playsinline loop preload="none" poster="/video/house-hunting-poster.png">
+            <source src="/video/house-hunting-film.mp4" type="video/mp4" />
+            Your browser does not support the video element.
+          </video>
+          <p class="film-caption">The HH House Hunting logo and mountain retreat animation.</p>
+        </div>
+      </dialog>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
