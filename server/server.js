@@ -22,6 +22,7 @@ mkdirSync('uploads', { recursive: true });
 mkdirSync(join('private', 'documents'), { recursive: true });
 
 const app = express();
+app.set('trust proxy', 1);
 app.disable('x-powered-by');
 if (env.TRUST_PROXY) app.set('trust proxy', Number(env.TRUST_PROXY));
 app.use(helmet({
